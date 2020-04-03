@@ -1,13 +1,18 @@
 Package: hot.dots
-Title: What the Package Does (One Line, Title Case)
+Title: Calculate per-landmark rates and plot them
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Ryan",
+           family = "Felice",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: What license it uses
+           email = "ryan.felice@ucl.ac.uk",
+           comment = c(ORCID = "0000-0002-9201-9213"))
+Description: Uses the multivariate extension of Pagel's lambda to calculate per-landmark rates for 3 morphometric data. Used in Fabre et al 2020
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
+Imports: 
+    geomorph,
+    tibble,
+    ape
+RoxygenNote: 7.1.0
