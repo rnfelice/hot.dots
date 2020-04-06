@@ -1,3 +1,4 @@
+#' @export
 per_lm_variance <- function(shape.data){
 
   variances<-rowSums(apply(shape.data ,c(1,2),var))

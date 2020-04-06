@@ -14,7 +14,7 @@ rates.vector<-colSums(matrix(diag(global$R), nrow=3))
 cols1<-colorRampPalette(c("#6e016b","#0c2c84","#225ea8","#005a32","#ffff00","#fe9929","#fc4e2a","red"))
 
 cols<-cols1(100)
-
+#' @export
 #calculate log rates:
 x=(log10(rates.vector))
 xlims<-NULL
