@@ -1,9 +1,9 @@
 per_lm_rates <- function(shape.data, phy){
 data.2d <- two.d.array(shape.data)
 phy.parts <- geomorph:::phylo.mat(data.2d, phy)
-invC <- geomorph:::phy.parts$invC
-D.mat <- geomorph:::phy.parts$D.mat
-C <- geomorph:::phy.parts$C
+invC <- phy.parts$invC
+D.mat <- phy.parts$D.mat
+C <- phy.parts$C
 
 global<-sig.calc(data.2d,invC,D.mat,Subset=TRUE)
 ###have to get the dim of shape data to replace this ppppppp
