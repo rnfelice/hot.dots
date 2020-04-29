@@ -5,7 +5,7 @@ invC <- phy.parts$invC
 D.mat <- phy.parts$D.mat
 C <- phy.parts$C
 
-global<-geomorph:::sig.calc(data.2d,invC,D.mat,Subset=TRUE)
+global<-geomorph:::sig.calc(data.2d,invC,D.mat,Subset=TRUE,p=dim(shape.data)[1],N=dim(shape.data)[3])
 ###have to get the dim of shape data to replace this ppppppp
 global.array1<-arrayspecs(global$R,p=dim(shape.data)[1],k=3)
 rates.vector<-colSums(matrix(diag(global$R), nrow=3))
