@@ -2,7 +2,7 @@
 \alias{per_lm_rates}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  Caclulate per landmark reates
+Caclulate per landmark reates
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
