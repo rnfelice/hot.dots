@@ -5,7 +5,7 @@ invC <- phy.parts$invC
 D.mat <- phy.parts$D.mat
 C <- phy.parts$C
 
-global<-geomorph:::sig.calc(data.2d,invC,D.mat,Subset=TRUE,p=dim(shape.data)[1],N=dim(shape.data)[3])
+global<-sig.calc1(data.2d,invC,D.mat)
 ###have to get the dim of shape data to replace this ppppppp
 global.array1<-arrayspecs(global$R,p=dim(shape.data)[1],k=3)
 rates.vector<-colSums(matrix(diag(global$R), nrow=3))
@@ -34,4 +34,17 @@ ratecolors <- sapply(x, whichColor, cols = cols, breaks = breaks)
 
 rate_table <- tibble("Per_Lm_Rates" = rates.vector, "Log_Rates" = x, "Rate_Colors" = ratecolors)
 return(rate_table)
+}
+
+
+#code from geomorph, Adams and Collyer
+sig.calc1<-function(x.i,invC.i,D.mat.i,Subset){
+  x.i<-as.matrix(x.i)
+  N<-dim(x.i)[1];p<-dim(x.i)[2]
+  ones<-matrix(1,N,N)
+  x.c<- x.i - crossprod(ones,invC.i)%*%x.i/sum(invC.i)
+  R<-crossprod(x.c, crossprod(invC.i,x.c))/N
+  if(Subset==FALSE) sigma<-sigma<-sum((D.mat.i%*%x.c)^2)/N  else
+    sigma<-sum((D.mat.i%*%x.c)^2)/N/p
+  return(list(sigma=sigma,R=R))
 }
