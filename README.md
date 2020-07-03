@@ -1,4 +1,3 @@
-[![DOI](https://zenodo.org/badge/252715866.svg)](https://zenodo.org/badge/latestdoi/252715866)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -8,7 +7,7 @@
 
 <!-- badges: end -->
 
-This paackage provides the code used in Fabre et al 2020 to calculate
+This package provides the code used in Fabre et al 2020 to calculate
 per-landmark rate and variance
 
 ## Installation
