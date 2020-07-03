@@ -5,10 +5,12 @@
 
 <!-- badges: start -->
 
+[![DOI](https://zenodo.org/badge/252715866.svg)](https://zenodo.org/badge/latestdoi/252715866)
 <!-- badges: end -->
 
-This paackage provides the code used in Fabre et al 2020 to calculate
-per-landmark rate and variance
+This package provides the code used in Fabre et al 2020
+(<https://doi.org/10.1038/s41559-020-1225-3>) to calculate per-landmark
+rate and variance
 
 ## Installation
 
@@ -36,20 +38,17 @@ my.rates <- per_lm_rates(shape.data = my.shapes, phy = phy1)
 my.variances <- per_lm_variance(shape.data = my.shapes)
 ```
 
-The log10-transformed rate and variance can be plotted on surfaces using
-the rgl and Rvcg packages
+The log10-transformed rate and variance can be plotted using the rgl
+packages
 
 ``` r
 library(rgl)
-library(Rvcg)
 #import the mesh file that corresponds to specimen 1 in the `my.shapes` array
-mesh1 <- vcgImport("./salamandermesh.ply")
-shade3d(mesh1, col = "white")
+
 spheres3d(my.shapes[,,1], col = my.rates$Rate_Colors)
 title3d("Per Landmark Rates")
 open3d()
-mesh1 <- vcgImport("./salamandermesh.ply")
-shade3d(mesh1, col = "white")
+
 spheres3d(my.shapes[,,1], col = my.variances$Variance_Colors)
 title3d("Per Landmark Disparity")
 ```
